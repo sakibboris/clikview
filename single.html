@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Sidebar 07</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* body {
+
+            background-color: #0000007a;
+
+            position: absolute;
+
+            top: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            display: none;
+
+        } */
+
+        /*.swiper-wrapper{*/
+        /*    overflow: scroll;*/
+
+        /*}*/
+
+        .desktopHide {
+
+            display: none;
+
+        }
+
+        @media only screen and (max-width: 570px) {
+
+            .overlay {
+
+                display: block;
+
+            }
+
+            .swiper-wrapper {
+
+                justify-content: start;
+
+            }
+
+            .mobileHide {
+
+                display: none;
+
+            }
+
+            .desktopHide {
+
+                display: block;
+
+            }
+
+            .btn-main {
+
+                margin-top: 2rem;
+            }
+
+            .container-home {
+                margin-top: 8rem !important;
+            }
+
+            .col-lg-3.col-lg-offset-5 {
+                width: 100%;
+            }
+
+        }
+
+        #sidebar {
+            margin-left: 0 !important;
+        }
+
+        hr {
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+            border: 0;
+            border-top: 2px solid rgb(139, 58, 58);
+            width: 100%;
+        }
+
+        body {
+            padding-top: 0;
+            background-color: #000000e8;
+        }
+        .page_head,
+        .article-categories .pt_categories ul li a{
+            color: white;
+        }
+    </style>
+</head>
+
+<body style="overflow-x: hidden;">
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar" class="active">
+            <div class="d-flex justify-content-center mt-3">
+                <button type="button" id="sidebarCollapse" class="btn btn-warning">
+                    <i class="fa fa-bars"></i>
+                    <span class="sr-only">Toggle Menu</span>
+                </button>
+            </div>
+            <ul class="list-unstyled components mb-5">
+                <li class="active">
+                    <a href="./INDEX.HTML"><span class="fa fa-home"></span> Home</a>
+                </li>
+                <li>
+                    <a href="./article.html"><span class="fa fa-file-text"></span> Article</a>
+                </li>
+                <li>
+                    <a href="#"><span class="fa fa-sticky-note"></span> Blog</a>
+                </li>
+                <li>
+                    <a href="#"><span class="fa fa-cogs"></span> Services</a>
+                </li>
+                <li>
+                    <a href="#"><span class="fa fa-paper-plane"></span> Contacts</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="content" class="">
+            <nav class="navbar navbar-expand-lg navbar-light pb-3 mb-0" style="background-color: #292828de;">
+                <div class="container-fluid">
+                    <a href="index.html" class="logo mb-0">
+                        <img src="./logo.png" alt="" class="img-fluid" style="height:42px;">
+                    </a>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+
+                        <ul class="nav right-part">
+                            <li class="dropdown hide_upload_mobi_link">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <path fill-rule="evenodd" fill="currentColor"
+                                            d="M10 3.25L9.94358 3.25L9.94356 3.25C8.10581 3.24999 6.65019 3.24997 5.51098 3.40314C4.33855 3.56077 3.38961 3.89288 2.64124 4.64125C1.89288 5.38961 1.56076 6.33856 1.40313 7.51098C1.24997 8.65019 1.24998 10.1058 1.25 11.9436L1.25 11.9436L1.25 12L1.25 12.0564L1.25 12.0565C1.24998 13.8942 1.24997 15.3498 1.40313 16.489C1.56076 17.6614 1.89288 18.6104 2.64124 19.3588C3.38961 20.1071 4.33855 20.4392 5.51098 20.5969C6.65019 20.75 8.10583 20.75 9.94359 20.75L10 20.75L10.0564 20.75L10.0565 20.75C11.8942 20.75 13.3498 20.75 14.489 20.5969C15.6614 20.4392 16.6104 20.1071 17.3588 19.3588C18.1071 18.6104 18.4392 17.6614 18.5969 16.489C18.6011 16.4577 18.6052 16.4261 18.6092 16.3943C19.1758 16.8183 19.6658 17.1765 20.0818 17.4026C20.5551 17.6598 21.1632 17.875 21.7826 17.5653C22.402 17.2556 22.5947 16.64 22.673 16.107C22.7501 15.5813 22.75 14.8815 22.75 14.0604L22.75 14L22.75 9.99999L22.75 9.93961C22.75 9.11853 22.7501 8.41864 22.673 7.893C22.5947 7.35998 22.402 6.74439 21.7826 6.4347C21.1632 6.12501 20.5551 6.34019 20.0818 6.59743C19.6658 6.82352 19.1758 7.18169 18.6092 7.60572C18.6052 7.5739 18.6011 7.54232 18.5969 7.51098C18.4392 6.33856 18.1071 5.38961 17.3588 4.64125C16.6104 3.89288 15.6614 3.56077 14.489 3.40314C13.3498 3.24997 11.8942 3.24999 10.0564 3.25L10.0564 3.25L10 3.25ZM18.75 11.8488L18.75 11.8418L18.75 11.8335L18.75 11.8251L18.75 11.8168L18.75 11.8084L18.75 11.8L18.75 11.7917L18.75 11.7833L18.75 11.7749L18.75 11.7666L18.75 11.7582L18.75 11.7498L18.75 11.7414L18.75 11.733L18.75 11.7246L18.75 11.7162L18.75 11.7078L18.75 11.6994L18.75 11.691L18.75 11.6825L18.75 11.6741L18.75 11.6657L18.75 11.6573L18.75 11.6488L18.75 11.6404L18.75 11.632L18.75 11.6235L18.75 11.6151L18.75 11.6066L18.75 11.5982L18.75 11.5897L18.75 11.5813L18.75 11.5728L18.75 11.5643L18.75 11.5559L18.75 11.5474L18.75 11.5389L18.75 11.5304L18.75 11.522L18.75 11.5135L18.75 11.505L18.75 11.4965L18.75 11.488L18.75 11.4795L18.75 11.471L18.75 11.4625L18.75 11.454L18.75 11.4455L18.75 11.437L18.75 11.4285L18.75 11.4199L18.75 11.4114L18.75 11.4029L18.75 11.3944L18.75 11.3858L18.75 11.3773L18.75 11.3688L18.75 11.3602L18.75 11.3517L18.75 11.3432L18.75 11.3346L18.75 11.3261L18.75 11.3175L18.75 11.309L18.75 11.3004L18.75 11.2919L18.75 11.2833L18.75 11.2748L18.75 11.2662L18.75 11.2576L18.75 11.2491L18.75 11.2405L18.75 11.2319L18.75 11.2234L18.75 11.2148L18.75 11.2062L18.75 11.1976L18.75 11.1891L18.75 11.1805L18.75 11.1719L18.75 11.1633L18.75 11.1547L18.75 11.1461L18.75 11.1375L18.75 11.1289L18.75 11.1203L18.75 11.1117L18.75 11.1032L18.75 11.0946L18.75 11.086L18.75 11.0773L18.75 11.0687L18.75 11.0601L18.75 11.0515L18.75 11.0429L18.75 11.0343L18.75 11.0257L18.75 11.0171L18.75 11.0085L18.75 10.9999L18.75 10.9912L18.75 10.9826L18.75 10.974L18.75 10.9654L18.75 10.9568L18.75 10.9481L18.75 10.9395L18.75 10.9309L18.75 10.9223L18.75 10.9137L18.75 10.905L18.75 10.8964L18.75 10.8878L18.75 10.8791L18.75 10.8705L18.75 10.8619L18.75 10.8532L18.75 10.8446L18.75 10.836L18.75 10.8273L18.75 10.8187L18.75 10.8101L18.75 10.8014L18.75 10.7928L18.75 10.7842L18.75 10.7755L18.75 10.7669L18.75 10.7583L18.75 10.7496L18.75 10.741L18.75 10.7323L18.75 10.7237L18.75 10.7151L18.75 10.7064L18.75 10.6978L18.75 10.6891L18.75 10.6805L18.75 10.6719L18.75 10.6632L18.75 10.6546L18.75 10.6459L18.75 10.6373L18.75 10.6286L18.75 10.62L18.75 10.6114L18.75 10.6027L18.75 10.5941L18.75 10.5854L18.75 10.5768L18.75 10.5682L18.75 10.5595L18.75 10.5509L18.75 10.5422L18.75 10.5336L18.75 10.525L18.75 10.5163L18.75 10.5077L18.75 10.4991L18.75 10.4904L18.75 10.4818L18.75 10.4731L18.75 10.4645L18.75 10.4559L18.75 10.4472L18.75 10.4386L18.75 10.43L18.75 10.4213L18.75 10.4127L18.75 10.4041L18.75 10.3955L18.75 10.3868L18.75 10.3782L18.75 10.3696L18.75 10.361L18.75 10.3523L18.75 10.3437L18.75 10.3351L18.75 10.3265L18.75 10.3178L18.75 10.3092L18.75 10.3006L18.75 10.292L18.75 10.2834L18.75 10.2748L18.75 10.2661L18.75 10.2575L18.75 10.2489L18.75 10.2403L18.75 10.2317L18.75 10.2231L18.75 10.2145L18.75 10.2059L18.75 10.1973L18.75 10.1887L18.75 10.1801L18.75 10.1715L18.75 10.1629L18.75 10.1543L18.75 10.1457L18.75 10.1371L18.75 10.1285L18.75 10.12L18.75 10.1114L18.75 10.1028L18.75 10.0942L18.75 10.0856L18.75 10.0771L18.75 10.0685L18.75 10.0599L18.75 10.0513L18.75 10.0428L18.75 10.0342L18.75 10.0256L18.75 10.0171L18.75 10.0085L18.75 9.99996C18.75 9.74167 18.7507 9.59613 18.7603 9.48769C18.7646 9.43923 18.7696 9.41311 18.7728 9.39999C18.7744 9.3938 18.7754 9.39062 18.7758 9.38956L18.7764 9.3882L18.7771 9.38693C18.7778 9.38599 18.7797 9.38321 18.7837 9.37828C18.7922 9.36782 18.8101 9.34811 18.8463 9.31561C18.9273 9.24286 19.0433 9.15498 19.25 9C19.9685 8.46106 20.4399 8.11002 20.798 7.91537C20.9675 7.82328 21.0616 7.79413 21.1071 7.78583C21.1277 7.82716 21.1608 7.91996 21.1888 8.11077C21.248 8.51408 21.25 9.10178 21.25 9.99999L21.25 14C21.25 14.8982 21.248 15.4859 21.1888 15.8892C21.1608 16.08 21.1277 16.1728 21.1071 16.2141C21.0616 16.2058 20.9675 16.1767 20.798 16.0846C20.4399 15.89 19.9686 15.5389 19.25 15C19.0434 14.845 18.9273 14.7572 18.8463 14.6844C18.8101 14.6519 18.7922 14.6322 18.7837 14.6217C18.7817 14.6193 18.7803 14.6175 18.7792 14.616C18.7781 14.6145 18.7775 14.6136 18.7771 14.6131L18.7764 14.6118L18.7758 14.6104C18.7754 14.6093 18.7743 14.6061 18.7728 14.6C18.7696 14.5869 18.7646 14.5608 18.7603 14.5125C18.7507 14.4043 18.75 14.2591 18.75 14.0012L18.75 13.9954L18.75 13.9896L18.75 13.9838L18.75 13.978L18.75 13.9722L18.75 13.9664L18.75 13.9606L18.75 13.9547L18.75 13.9489L18.75 13.943L18.75 13.9371L18.75 13.9312L18.75 13.9253L18.75 13.9193L18.75 13.9134L18.75 13.9075L18.75 13.9015L18.75 13.8955L18.75 13.8895L18.75 13.8835L18.75 13.8775L18.75 13.8715L18.75 13.8654L18.75 13.8594L18.75 13.8533L18.75 13.8472L18.75 13.8411L18.75 13.835L18.75 13.8289L18.75 13.8228L18.75 13.8166L18.75 13.8105L18.75 13.8043L18.75 13.7981L18.75 13.792L18.75 13.7857L18.75 13.7795L18.75 13.7733L18.75 13.7671L18.75 13.7608L18.75 13.7546L18.75 13.7483L18.75 13.742L18.75 13.7357L18.75 13.7294L18.75 13.7231L18.75 13.7167L18.75 13.7104L18.75 13.704L18.75 13.6977L18.75 13.6913L18.75 13.6849L18.75 13.6785L18.75 13.6721L18.75 13.6656L18.75 13.6592L18.75 13.6527L18.75 13.6463L18.75 13.6398L18.75 13.6333L18.75 13.6268L18.75 13.6203L18.75 13.6138L18.75 13.6073L18.75 13.6007L18.75 13.5942L18.75 13.5876L18.75 13.581L18.75 13.5744L18.75 13.5678L18.75 13.5612L18.75 13.5546L18.75 13.548L18.75 13.5413L18.75 13.5347L18.75 13.528L18.75 13.5214L18.75 13.5147L18.75 13.508L18.75 13.5013L18.75 13.4945L18.75 13.4878L18.75 13.4811L18.75 13.4743L18.75 13.4676L18.75 13.4608L18.75 13.454L18.75 13.4472L18.75 13.4404L18.75 13.4336L18.75 13.4268L18.75 13.4199L18.75 13.4131L18.75 13.4062L18.75 13.3994L18.75 13.3925L18.75 13.3856L18.75 13.3787L18.75 13.3718L18.75 13.3649L18.75 13.358L18.75 13.351L18.75 13.3441L18.75 13.3371L18.75 13.3301L18.75 13.3232L18.75 13.3162L18.75 13.3092L18.75 13.3022L18.75 13.2952L18.75 13.2881L18.75 13.2811L18.75 13.274L18.75 13.267L18.75 13.2599L18.75 13.2528L18.75 13.2458L18.75 13.2387L18.75 13.2315L18.75 13.2244L18.75 13.2173L18.75 13.2102L18.75 13.203L18.75 13.1959L18.75 13.1887L18.75 13.1815L18.75 13.1744L18.75 13.1672L18.75 13.16L18.75 13.1528L18.75 13.1455L18.75 13.1383L18.75 13.1311L18.75 13.1238L18.75 13.1166L18.75 13.1093L18.75 13.102L18.75 13.0947L18.75 13.0874L18.75 13.0801L18.75 13.0728L18.75 13.0655L18.75 13.0582L18.75 13.0508L18.75 13.0435L18.75 13.0361L18.75 13.0288L18.75 13.0214L18.75 13.014L18.75 13.0066L18.75 12.9992L18.75 12.9918L18.75 12.9844L18.75 12.977L18.75 12.9696L18.75 12.9621L18.75 12.9547L18.75 12.9472L18.75 12.9397L18.75 12.9323L18.75 12.9248L18.75 12.9173L18.75 12.9098L18.75 12.9023L18.75 12.8948L18.75 12.8872L18.75 12.8797L18.75 12.8722L18.75 12.8646L18.75 12.857L18.75 12.8495L18.75 12.8419L18.75 12.8343L18.75 12.8267L18.75 12.8191L18.75 12.8115L18.75 12.8039L18.75 12.7963L18.75 12.7887L18.75 12.781L18.75 12.7734L18.75 12.7657L18.75 12.7581L18.75 12.7504L18.75 12.7427L18.75 12.735L18.75 12.7273L18.75 12.7196L18.75 12.7119L18.75 12.7042L18.75 12.6965L18.75 12.6888L18.75 12.681L18.75 12.6733L18.75 12.6655L18.75 12.6578L18.75 12.65L18.75 12.6422L18.75 12.6345L18.75 12.6267L18.75 12.6189L18.75 12.6111L18.75 12.6033L18.75 12.5955L18.75 12.5876L18.75 12.5798L18.75 12.572L18.75 12.5641L18.75 12.5563L18.75 12.5484L18.75 12.5405L18.75 12.5327L18.75 12.5248L18.75 12.5169L18.75 12.509L18.75 12.5011L18.75 12.4932L18.75 12.4853L18.75 12.4774L18.75 12.4695L18.75 12.4615L18.75 12.4536L18.75 12.4456L18.75 12.4377L18.75 12.4297L18.75 12.4218L18.75 12.4138L18.75 12.4058L18.75 12.3978L18.75 12.3899L18.75 12.3819L18.75 12.3739L18.75 12.3659L18.75 12.3578L18.75 12.3498L18.75 12.3418L18.75 12.3338L18.75 12.3257L18.75 12.3177L18.75 12.3096L18.75 12.3016L18.75 12.2935L18.75 12.2854L18.75 12.2774L18.75 12.2693L18.75 12.2612L18.75 12.2531L18.75 12.245L18.75 12.2369L18.75 12.2288L18.75 12.2207L18.75 12.2126L18.75 12.2044L18.75 12.1963L18.75 12.1882L18.75 12.18L18.75 12.1719L18.75 12.1637L18.75 12.1556L18.75 12.1512M17.25 12C17.25 13.9068 17.2484 15.2615 17.1102 16.2892C16.975 17.2952 16.7213 17.8749 16.2981 18.2981C15.8749 18.7213 15.2952 18.975 14.2892 19.1102C13.2615 19.2484 11.9068 19.25 10 19.25C8.09318 19.25 6.73851 19.2484 5.71085 19.1102C4.70476 18.975 4.12511 18.7213 3.7019 18.2981C3.27869 17.8749 3.02502 17.2952 2.88976 16.2892C2.75159 15.2615 2.75 13.9068 2.75 12C2.75 10.0932 2.75159 8.73852 2.88976 7.71085C3.02502 6.70476 3.27869 6.12512 3.7019 5.70191C4.12511 5.2787 4.70476 5.02503 5.71085 4.88976C6.73851 4.7516 8.09318 4.75 10 4.75C11.9068 4.75 13.2615 4.7516 14.2892 4.88976C15.2952 5.02503 15.8749 5.2787 16.2981 5.70191C16.7213 6.12512 16.975 6.70476 17.1102 7.71085C17.2484 8.73852 17.25 10.0932 17.25 12ZM21.1422 7.78417C21.1418 7.78483 21.137 7.78511 21.129 7.783C21.1387 7.78245 21.1427 7.7835 21.1422 7.78417ZM21.0962 7.76658C21.0897 7.76146 21.087 7.75743 21.0873 7.7567C21.0876 7.75596 21.0908 7.75852 21.0962 7.76658ZM21.0873 16.2433C21.087 16.2425 21.0897 16.2385 21.0962 16.2334C21.0908 16.2414 21.0876 16.244 21.0873 16.2433ZM21.129 16.217C21.137 16.2148 21.1418 16.2151 21.1422 16.2158C21.1427 16.2165 21.1387 16.2175 21.129 16.217Z">
+                                        </path>
+                                    </svg><span class="hide_hdr_usr_name">&nbsp;&nbsp;Create</span>
+                                </a>
+                                <ul class="dropdown-menu pt-create-menu">
+
+                                    <li class="hide_up_imp">
+                                        <a href="https://clikview.com/upload-video" data-load="?link1=upload-video">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M7 10.25L6.96421 10.25C6.05997 10.25 5.33069 10.25 4.7424 10.3033C4.13605 10.3583 3.60625 10.4746 3.125 10.7524C2.55493 11.0815 2.08154 11.5549 1.7524 12.125C1.47455 12.6063 1.35826 13.1361 1.3033 13.7424C1.24998 14.3307 1.24999 15.06 1.25 15.9642L1.25 15.9642L1.25 16L1.25 16.0358L1.25 16.0358C1.24999 16.94 1.24998 17.6693 1.3033 18.2576C1.35826 18.8639 1.47455 19.3937 1.7524 19.875C2.08154 20.4451 2.55493 20.9185 3.125 21.2476C3.60625 21.5254 4.13605 21.6417 4.7424 21.6967C5.33067 21.75 6.05992 21.75 6.96412 21.75L6.96418 21.75L7 21.75L17 21.75L17.0357 21.75C17.94 21.75 18.6693 21.75 19.2576 21.6967C19.8639 21.6417 20.3937 21.5254 20.875 21.2476C21.4451 20.9185 21.9185 20.4451 22.2476 19.875C22.5254 19.3937 22.6417 18.8639 22.6967 18.2576C22.75 17.6693 22.75 16.94 22.75 16.0358L22.75 16L22.75 15.9642C22.75 15.06 22.75 14.3307 22.6967 13.7424C22.6417 13.1361 22.5254 12.6063 22.2476 12.125C21.9185 11.5549 21.4451 11.0815 20.875 10.7524C20.3937 10.4746 19.8639 10.3583 19.2576 10.3033C18.6693 10.25 17.94 10.25 17.0358 10.25L17 10.25L16 10.25C15.5858 10.25 15.25 10.5858 15.25 11C15.25 11.4142 15.5858 11.75 16 11.75L17 11.75C17.9484 11.75 18.6096 11.7507 19.1222 11.7972C19.6245 11.8427 19.9101 11.9274 20.125 12.0514C20.467 12.2489 20.7511 12.533 20.9486 12.875C21.0726 13.0899 21.1573 13.3755 21.2028 13.8778C21.2493 14.3904 21.25 15.0516 21.25 16C21.25 16.9484 21.2493 17.6096 21.2028 18.1222C21.1573 18.6245 21.0726 18.9101 20.9486 19.125C20.7511 19.467 20.467 19.7511 20.125 19.9486C19.9101 20.0726 19.6245 20.1573 19.1222 20.2028C18.6096 20.2493 17.9484 20.25 17 20.25L7 20.25C6.05158 20.25 5.39041 20.2493 4.87779 20.2028C4.37549 20.1573 4.0899 20.0726 3.875 19.9486C3.53296 19.7511 3.24892 19.467 3.05144 19.125C2.92737 18.9101 2.8427 18.6245 2.79718 18.1222C2.75072 17.6096 2.75 16.9484 2.75 16C2.75 15.0516 2.75072 14.3904 2.79718 13.8778C2.84271 13.3755 2.92737 13.0899 3.05144 12.875C3.24892 12.533 3.53296 12.2489 3.875 12.0514C4.0899 11.9274 4.37549 11.8427 4.87779 11.7972C5.39041 11.7507 6.05158 11.75 7 11.75L8 11.75C8.41421 11.75 8.75 11.4142 8.75 11C8.75 10.5858 8.41421 10.25 8 10.25L7 10.25ZM16.5303 6.46967L12.5303 2.46967C12.2374 2.17678 11.7626 2.17678 11.4697 2.46967L7.46967 6.46967C7.17678 6.76256 7.17678 7.23744 7.46967 7.53033C7.76256 7.82322 8.23744 7.82322 8.53033 7.53033L11.25 4.81066L11.25 16C11.25 16.4142 11.5858 16.75 12 16.75C12.4142 16.75 12.75 16.4142 12.75 16L12.75 4.81066L15.4697 7.53033C15.7626 7.82322 16.2374 7.82322 16.5303 7.53033C16.8232 7.23744 16.8232 6.76256 16.5303 6.46967Z"
+                                                    fill="#2196f3"></path>
+                                            </svg> Upload
+                                        </a>
+                                    </li>
+
+                                    <li class="hide_up_imp">
+                                        <a href="https://clikview.com/import-video" data-load="?link1=import-video">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M12.75 3.00008C12.75 2.58586 12.4142 2.25008 12 2.25008C11.5858 2.25008 11.25 2.58586 11.25 3.00008V15.1894L8.53033 12.4697C8.23744 12.1769 7.76256 12.1769 7.46967 12.4697C7.17678 12.7626 7.17678 13.2375 7.46967 13.5304L11.4697 17.5304C11.6103 17.6711 11.8011 17.7501 12 17.7501C12.1989 17.7501 12.3897 17.6711 12.5303 17.5304L16.5303 13.5304C16.8232 13.2375 16.8232 12.7626 16.5303 12.4697C16.2374 12.1769 15.7626 12.1769 15.4697 12.4697L12.75 15.1894V3.00008ZM7.5 8.25H7.45481C6.32039 8.24999 5.4057 8.24998 4.67621 8.33222C3.92193 8.41726 3.27341 8.59809 2.71713 9.02494C2.45714 9.22444 2.22443 9.45716 2.02493 9.71714C1.59808 10.2734 1.41725 10.922 1.33221 11.6762C1.24997 12.4057 1.24999 13.3204 1.25 14.4548V14.5V15V15.0549C1.24998 16.4225 1.24996 17.5248 1.36652 18.3918C1.48754 19.2919 1.74643 20.0497 2.34835 20.6517C2.95027 21.2536 3.70814 21.5125 4.60825 21.6335C5.4752 21.75 6.57751 21.75 7.94507 21.75H8H16H16.0548C17.4224 21.75 18.5248 21.7501 19.3918 21.6335C20.2919 21.5125 21.0497 21.2536 21.6516 20.6517C22.2536 20.0497 22.5125 19.2919 22.6335 18.3918C22.75 17.5248 22.75 16.4225 22.75 15.0549V15V14.5V14.4548C22.75 13.3204 22.75 12.4057 22.6678 11.6762C22.5828 10.922 22.4019 10.2734 21.9751 9.71714C21.7756 9.45716 21.5429 9.22444 21.2829 9.02495C20.7266 8.59809 20.0781 8.41726 19.3238 8.33222C18.5943 8.24998 17.6796 8.24999 16.5452 8.25H16.5452H16.5L16.5 9L16.5 8.25L16 8.25002C15.5858 8.25003 15.25 8.58582 15.25 9.00004C15.25 9.41425 15.5858 9.75003 16 9.75002L16.5 9.75H16.5C17.6902 9.75 18.5201 9.75112 19.1558 9.82278C19.7763 9.89274 20.1181 10.0219 20.3697 10.215C20.5257 10.3347 20.6653 10.4743 20.785 10.6303C20.9781 10.8819 21.1073 11.2238 21.1772 11.8443C21.2489 12.4799 21.25 13.3098 21.25 14.5V15C21.25 16.4354 21.2484 17.4365 21.1469 18.1919C21.0482 18.9257 20.8678 19.3142 20.591 19.591C20.3142 19.8678 19.9257 20.0482 19.1919 20.1469C18.4365 20.2484 17.4354 20.25 16 20.25H8C6.56458 20.25 5.56347 20.2484 4.80812 20.1469C4.07435 20.0482 3.68577 19.8678 3.40901 19.591C3.13225 19.3142 2.9518 18.9257 2.85315 18.1919C2.75159 17.4365 2.75 16.4354 2.75 15V14.5C2.75 13.3098 2.75112 12.4799 2.82277 11.8443C2.89273 11.2238 3.02187 10.8819 3.21496 10.6303C3.33466 10.4743 3.47429 10.3347 3.63028 10.215C3.88192 10.0219 4.22375 9.89273 4.84425 9.82278C5.47986 9.75112 6.30976 9.75 7.49998 9.75H7.5L7.99998 9.75002C8.41419 9.75003 8.74999 9.41425 8.75 9.00004C8.75001 8.58582 8.41424 8.25003 8.00002 8.25002L7.50002 8.25L7.5 9L7.5 8.25Z"
+                                                    fill="#4caf50"></path>
+                                            </svg> Import
+                                        </a>
+                                    </li>
+
+                                    <li class="divider"></li>
+                                    <li class="hide_up_imp">
+                                        <a href="https://clikview.com/upload-video?type=shorts"
+                                            data-load="?link1=upload-video&amp;type=shorts">
+                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 168.071 168.071" xml:space="preserve"
+                                                style="color: blueviolet;">
+                                                <g>
+                                                    <g>
+                                                        <path opacity="0.5" style="fill: currentColor;"
+                                                            d="M154.932,91.819L42.473,27.483c-2.219-1.26-4.93-1.26-7.121-0.027 c-2.219,1.233-3.588,3.533-3.615,6.026L31.08,161.059c0,0,0,0,0,0.027c0,2.465,1.369,4.766,3.533,6.026 c1.123,0.63,2.355,0.959,3.615,0.959c1.205,0,2.438-0.301,3.533-0.931l113.116-63.214c2.219-1.26,3.588-3.533,3.588-6.053 c0,0,0,0,0-0.027C158.465,95.38,157.123,93.079,154.932,91.819z">
+                                                        </path>
+                                                        <g id="XMLID_15_">
+                                                            <g>
+                                                                <path style="fill:currentColor;"
+                                                                    d="M79.952,44.888L79.952,44.888c3.273-3.273,2.539-8.762-1.479-11.06l-7.288-4.171 c-2.75-1.572-6.212-1.109-8.452,1.128l0,0c-3.273,3.273-2.539,8.762,1.479,11.06l7.291,4.169 C74.25,47.589,77.712,47.126,79.952,44.888z">
+                                                                </path>
+                                                                <path style="fill:currentColor;"
+                                                                    d="M133.459,65.285L99.103,45.631c-2.75-1.572-6.209-1.109-8.449,1.128l0,0 c-3.273,3.273-2.539,8.759,1.479,11.057l23.497,13.44L23.931,122.5l0.52-103.393l19.172,10.964 c2.722,1.558,6.152,1.098,8.367-1.12l0.104-0.104c3.24-3.24,2.514-8.674-1.463-10.95L21,0.948 c-2.219-1.26-4.93-1.26-7.121-0.027c-2.219,1.233-3.588,3.533-3.615,6.026L9.607,134.524c0,0,0,0,0,0.027 c0,2.465,1.369,4.766,3.533,6.026c1.123,0.63,2.355,0.959,3.615,0.959c1.205,0,2.438-0.301,3.533-0.931l113.116-63.214 c2.219-1.26,3.588-3.533,3.588-6.053c0,0,0,0,0-0.027C136.992,68.845,135.65,66.545,133.459,65.285z">
+                                                                </path>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </svg> Shorts
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="container">
+                <div class="row gap-x-0 pl-3 mt-5">
+                    <div class="col-12">
+                        <div class="read-content">
+                            <div class="read-article-container">
+                                <div class="read-article-head">
+                                                <h1>Priests, Shame and a Clothes line ~ A Memoir Post</h1>
+                                </div>
+                                <div class="article_user_share_btns">
+                                    <div class="article_pub_user">
+                                        <a href="https://clikview.com/@Dianed42" data-load="?link1=timeline&amp;id=Dianed42">
+                                            <img src="https://clikview.com/upload/photos/2022/10/mmgJEYeeEETKStDaRr1y_29_37c4757c40af8dc98dfae25e0875a477_image.jpeg" alt="Diane Divone avatar">
+                                        </a>&nbsp;&nbsp;
+                                        <div>
+                                            <h6><a href="https://clikview.com/@Dianed42" data-load="?link1=timeline&amp;id=Dianed42">Diane Divone</a></h6>
+                                            <time>03/11/22&nbsp;&nbsp;•&nbsp;&nbsp;71 Views&nbsp;&nbsp;•&nbsp;&nbsp;<span id="post-shares">0</span> Share&nbsp;&nbsp;•&nbsp;&nbsp;Published in</time> <a class="postCategory" href="https://clikview.com/articles/category/7" data-load="?link1=articles&amp;category_id=7">Motivation</a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                                            <div class="read-article-share">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M18,16.08C17.24,16.08 16.56,16.38 16.04,16.85L8.91,12.7C8.96,12.47 9,12.24 9,12C9,11.76 8.96,11.53 8.91,11.3L15.96,7.19C16.5,7.69 17.21,8 18,8A3,3 0 0,0 21,5A3,3 0 0,0 18,2A3,3 0 0,0 15,5C15,5.24 15.04,5.47 15.09,5.7L8.04,9.81C7.5,9.31 6.79,9 6,9A3,3 0 0,0 3,12A3,3 0 0,0 6,15C6.79,15 7.5,14.69 8.04,14.19L15.16,18.34C15.11,18.55 15.08,18.77 15.08,19C15.08,20.61 16.39,21.91 18,21.91C19.61,21.91 20.92,20.61 20.92,19A2.92,2.92 0 0,0 18,16.08Z"></path></svg>&nbsp;&nbsp;
+                                                <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fclikview.com%2Farticles%2Fread%2Fpriests-shame-and-a-clothes-line-a-memoir-post_137.html" target="_blank" class="btn facebook">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"></path></svg>
+                                                </a>
+                                                <a href="http://twitter.com/intent/tweet?text=Priests, Shame and a Clothes line ~ A Memoir Post&amp;url=https%3A%2F%2Fclikview.com%2Farticles%2Fread%2Fpriests-shame-and-a-clothes-line-a-memoir-post_137.html" target="_blank" class="btn twitter">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path></svg>
+                                                </a>
+                                                <a href="https://wa.me/?text=https%3A%2F%2Fclikview.com%2Farticles%2Fread%2Fpriests-shame-and-a-clothes-line-a-memoir-post_137.html" target="_blank" class="btn whatsapp">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7 8.5 7 9.71C7 10.93 7.89 12.1 8 12.27C8.14 12.44 9.76 14.94 12.25 16C12.84 16.27 13.3 16.42 13.66 16.53C14.25 16.72 14.79 16.69 15.22 16.63C15.7 16.56 16.68 16.03 16.89 15.45C17.1 14.87 17.1 14.38 17.04 14.27C16.97 14.17 16.81 14.11 16.56 14C16.31 13.86 15.09 13.26 14.87 13.18C14.64 13.1 14.5 13.06 14.31 13.3C14.15 13.55 13.67 14.11 13.53 14.27C13.38 14.44 13.24 14.46 13 14.34C12.74 14.21 11.94 13.95 11 13.11C10.26 12.45 9.77 11.64 9.62 11.39C9.5 11.15 9.61 11 9.73 10.89C9.84 10.78 10 10.6 10.1 10.45C10.23 10.31 10.27 10.2 10.35 10.04C10.43 9.87 10.39 9.73 10.33 9.61C10.27 9.5 9.77 8.26 9.56 7.77C9.36 7.29 9.16 7.35 9 7.34C8.86 7.34 8.7 7.33 8.53 7.33Z"></path></svg>
+                                                </a>
+                                                <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fclikview.com%2Farticles%2Fread%2Fpriests-shame-and-a-clothes-line-a-memoir-post_137.html" target="_blank" class="btn linkedin">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"></path></svg>
+                                                </a>
+                                                <a href="http://pinterest.com/pin/create/button/?url=https%3A%2F%2Fclikview.com%2Farticles%2Fread%2Fpriests-shame-and-a-clothes-line-a-memoir-post_137.html" target="_blank" class="btn pinterest">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M9.04,21.54C10,21.83 10.97,22 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2A10,10 0 0,0 2,12C2,16.25 4.67,19.9 8.44,21.34C8.35,20.56 8.26,19.27 8.44,18.38L9.59,13.44C9.59,13.44 9.3,12.86 9.3,11.94C9.3,10.56 10.16,9.53 11.14,9.53C12,9.53 12.4,10.16 12.4,10.97C12.4,11.83 11.83,13.06 11.54,14.24C11.37,15.22 12.06,16.08 13.06,16.08C14.84,16.08 16.22,14.18 16.22,11.5C16.22,9.1 14.5,7.46 12.03,7.46C9.21,7.46 7.55,9.56 7.55,11.77C7.55,12.63 7.83,13.5 8.29,14.07C8.38,14.13 8.38,14.21 8.35,14.36L8.06,15.45C8.06,15.62 7.95,15.68 7.78,15.56C6.5,15 5.76,13.18 5.76,11.71C5.76,8.55 8,5.68 12.32,5.68C15.76,5.68 18.44,8.15 18.44,11.43C18.44,14.87 16.31,17.63 13.26,17.63C12.29,17.63 11.34,17.11 11,16.5L10.33,18.87C10.1,19.73 9.47,20.88 9.04,21.57V21.54Z"></path></svg>
+                                                </a>
+                                            </div>
+                                                    </div>
+                                </div>
+                        
+                                <div class="img_prnt">
+                                    <img src="https://clikview.com/upload/photos/2022/11/apwOTPKpd8K12rsSm6SD_03_8a0583032bb89e7a338ea7612c7d1bcb_image.jpeg">
+                                    <div class="img_prnt_sub">
+                                        <div class="read-article-feat-image">
+                                            <img src="https://clikview.com/upload/photos/2022/11/apwOTPKpd8K12rsSm6SD_03_8a0583032bb89e7a338ea7612c7d1bcb_image.jpeg">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="read-article-container">
+                                        <div class="read-article-description">
+                                            <article>A Catholic girl's innocence and the awakening to discover thinking for myself and french kissing!</article>
+                                        </div>
+                                        
+                                        <div class="read-article-text">
+                                            <div class="post-header">
+                        <h3 class="subtitle">&nbsp;</h3>
+                        <div class="post-subheader meta-subheader">
+                        <div class="left">
+                        <div class="facepile bylines-facepile">
+                        <div class="facepile-faces">
+                        <div class="profile-hover-wrapper"><a class="facepile-link" href="https://substack.com/profile/24682114-diane-divone?utm_source=author-byline-face"><img class="facepile-face first-face" src="https://substackcdn.com/image/fetch/w_64,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fbab8b628-e74e-457e-add0-6fba9c12d3b9_3264x2448.jpeg"></a></div>
+                        <div class="profile-hover-wrapper"><strong style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Picture:Watercolor clothes line by: Kathy Mommsen.com</strong></div>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="">
+                        <div class="available-content">
+                        <div class="body markup" dir="auto">
+                        <p>I was 11 or 12 playing in the school yard, which was the church parking lot on Sundays, running around on cement trying not to get scraped up or too sweaty. My best friend and co-conspirator and I were curious about french kissing. I think we had been at a classmates party and one of “the boys” said something about it. &nbsp;What else do pre-pubescent girls do while being active on a warm spring day while running around on cement.</p>
+                        <div class="subscription-widget-wrap">
+                        <div class="subscription-widget show-subscribe">
+                        <div class="preamble">
+                        <p><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">So in our utter innocence and curiosity we figured we would ask an adult. Not one of the nuns, not sure why we decided that but a priest seemed like the right choice. After all they were the ones in “authority.” They were the ones that listened to all our “sins” and we confessed everything to them. Yup, you guessed it ~ a Catholic girl! So we figured who better to know what french kissing meant than a priest. &nbsp;So as fate would have it as we are running towards the rectory, playing and giggling out comes one of the priests. We look at each other and in that instance we knew we could ask him that question</span></p>
+                        </div>
+                        </div>
+                        </div>
+                        <p>I can still remember us running up to him. &nbsp;I can’t recall if she asked it or if I asked him the question. Very innocently and very curiously,&nbsp;<em>“Father, what does french kissing mean?”</em>&nbsp;Well, in that moment I unconsciously understood and felt shame. &nbsp;I can still remember the way he looked at us. I can only imagine what he thought or felt but the outward expression was one of horror, amusement, reprimand, and countless other emotions crossing his face in an instant. He didn’t answer us. He just looked at us for what seemed like a day and said very calmly “Go back and play because recess is going to end soon.”&nbsp;<em><strong>End of conversation! &nbsp;</strong></em></p>
+                        <p>I do not know what we did after that but I do remember feeling uncomfortable. I remember that I felt like I did something so wrong and thinking what could “french kissing” possibly mean? &nbsp;In my simple innocence I was shamed, shut down and dismissed.</p>
+                        <p>This story has two flavors for me, hard and dismissive and a sweet child story. And in a lot of ways it set me up to believe that curiosity and questions aren’t to be asked or answered. They are to be dismissed, avoided and left hanging like those clothes on the clothes line that I had to learn to use. Dangling in the wind, hung a certain way, clothes pins put on the socks and shirts differently. Every season no matter whether it was freezing or sunny. Clothes got hung out. In the winter I would pull the clothes line in from my second floor bedroom window and my fathers shirts would be frozen solid. Then I would try to get them through the window I was hanging out of without them breaking LOL. Then place them on the steam radiator with a towel on the floor to catch the dripping shirts as they thawed. I never understood why I had to hang them out in the first place. OH I think I just digressed? &nbsp;Or was that another part of being dismissed by an adult when I asked why they had to be hung outside when they were going to freeze and then I had to bring them in on a heavy clothes line that wouldn’t move because it too was frozen. Invariably the clothes line would get stuck until spring and my grandfather would have to climb the pole in the yard to get it to move again. Ah..Memories in the corners of my mind!</p>
+                        <p><em><strong>Moral of these snippets of my&nbsp;life story ~ Both memories coincided to encompass many facets of living: &nbsp;joy, laughter, repression, shame, confusion, discomfort, curiosity, silliness, innocence, maturity!&nbsp;</strong></em></p>
+                        <p><em>I still love my clothes lines. I think I have had one in every home I have lived in the last 40 years. I especially love the smell of the clothes when I bring them inside to fold them.</em></p>
+                        <p><em>And at around 13 years old I stopped going to church and hung out in the park with Billy (my childhood sweetheart) and learned about french kissing. &nbsp;</em></p>
+                        <p><em>Something shifted inside of me with that school yard experience. &nbsp;I discovered that God/higher power/spirit existed inside of me and not just inside a nun or a priest or any adult that couldn’t or wouldn’t honestly with respect and regard for the beauty of my questions give me answers. &nbsp;So I figured if he didn’t know what french kissing was then there wasn’t anything there for me to learn from him or those supposedly in charge. I didn’t cognitively know this then but I felt something in that experience that created a determination inside of me to remain in my questions no matter what anyone answered or didn’t answer. It gave me the indefatigable strength and fortitude to cultivate my own internal resources and curiosity.</em></p>
+                        <p><em>These character traits have served me well especially over the last few years.&nbsp;&nbsp;</em></p>
+                        <p>Thanks for reading!</p>
+                        </div>
+                        </div>
+                        </div>
+                                        </div>
+                                        
+                                        <div class="read-article-meta">
+                                                                    <div class="count">
+                                                    <span onclick="PT_LikePost(this,'up');" data-post-likes="1">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-thumbs-up "><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg> <span>1</span>
+                                                    </span>
+                                                    <span onclick="PT_LikePost(this,'down');" data-post-dislikes="0">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-thumbs-down "><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"></path></svg> <span>0</span>
+                                                    </span>
+                                                </div>
+                                                &nbsp;&nbsp;•&nbsp;&nbsp;
+                                                1 Comments
+                                                            </div>
+                                 
+                                        <div class="read-article-comments-container">
+                                            <div class="comments-content content">
+                                                                            <form class="form submit-article-commet">
+                                                        <div class="w100 pt_blogcomm_combo">
+                                                                                                <textarea name="text" class="form-control" placeholder="Write your comment.."></textarea>
+                                                            <button class="btn" type="submit">Publish <svg xmlns="http://www.w3.org/2000/svg" class="btn btn-main" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path></svg></button>
+                                                        </div>
+                                                    </form>
+                                                    <div class="user-comments width-100" id="post-comments" style="margin-top: 20px;">
+                                                        <div class="main-comment article-comments" data-id="4176" id="comment-4176">
+                            <div class="main-comment-data-sp">
+                                <div class="user-avatar pull-left">
+                                    <img src="https://clikview.com/upload/photos/2022/08/cSMEBMWvjnCk7fw7kDI6_22_bcd130e53f942ddf2283a48884c7fc3c_image.jpeg" alt="Sharon Leonard">
+                                </div>
+                                        <div class="user-name">
+                                    <a href="https://clikview.com/@SharonLeonard" data-load="?link1=timeline&amp;id=SharonLeonard">Sharon Leonard</a> 
+                                                <small>4 days ago</small>
+                                </div>
+                                <div class="user-comment">
+                                    Wonderful story☀️
+                                    <div class="width-100 div-vote-comment">
+                                        <span class="div-vote-comment-btn">
+                                            <span onclick="PT_LikeComments(this,'up','4176');" data-comment-likes="4176">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-thumbs-up "><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg> <span>1</span>
+                                            </span>
+                                            <span onclick="PT_LikeComments(this,'down','4176');" data-comment-dislikes="4176">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-thumbs-down "><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"></path></svg> <span>0</span>
+                                            </span>
+                                        </span>
+                                        <span class="pointer comms-reply" onclick="PT_Reply('4176');">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" fill="currentColor" d="M3.75 12C3.75 7.44365 7.44365 3.75 12 3.75C16.5564 3.75 20.25 7.44365 20.25 12C20.25 16.5563 16.5564 20.25 12 20.25H4.38671C4.44208 20.1609 4.49371 20.0757 4.54156 19.9941C4.76667 19.6101 4.93921 19.254 5.02614 18.8789C5.08857 18.6096 5.10413 18.4986 5.11816 18.2225C5.13874 17.8173 5.03609 17.3357 4.88542 16.7855C4.73048 16.2197 4.49527 15.4841 4.19182 14.5351L4.18591 14.5166C3.92871 13.7122 3.75 12.8456 3.75 12ZM2.25 21C2.25 20.8424 2.29861 20.6962 2.38165 20.5755C2.77429 19.9865 3.05123 19.5703 3.24752 19.2355C3.44396 18.9004 3.52846 18.6974 3.56488 18.5402C3.59038 18.4302 3.59934 18.3841 3.60482 18.345C3.6103 18.3059 3.61436 18.2592 3.62009 18.1464C3.62723 18.0059 3.58952 17.7325 3.43869 17.1817C3.29313 16.6501 3.06774 15.9447 2.75717 14.9735C2.46937 14.0734 2.25 13.0472 2.25 12C2.25 6.61522 6.61522 2.25 12 2.25C17.3848 2.25 21.75 6.61522 21.75 12C21.75 17.3848 17.3848 21.75 12 21.75H3C2.58579 21.75 2.25 21.4142 2.25 21ZM8 13C8.55228 13 9 12.5523 9 12C9 11.4477 8.55228 11 8 11C7.44772 11 7 11.4477 7 12C7 12.5523 7.44772 13 8 13ZM13 12C13 12.5523 12.5523 13 12 13C11.4477 13 11 12.5523 11 12C11 11.4477 11.4477 11 12 11C12.5523 11 13 11.4477 13 12ZM16 13C16.5523 13 17 12.5523 17 12C17 11.4477 16.5523 11 16 11C15.4477 11 15 11.4477 15 12C15 12.5523 15.4477 13 16 13Z"></path> </svg> Reply
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="width: 100%;overflow: hidden;">
+                                <div class="pt-comment-replies user-comment" style="width: 100%;padding: 0 0 0 60px;">
+                                    <div class="pt-comment-item-replies-list" id="pt-comment-replies-cont-4176">
+                                        
+                                    </div>
+                                    <div class="pt-comment-item-reply-form hidden" id="comm-reply-4176">
+                                        <input type="text" class="form-control" placeholder="Write a comment and press ENTER" onkeydown="PT_RPReply(this.value,'4176',event,'137');">
+                                    </div>      
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                                                    </div>
+                                                                                    <div class="watch-video-show-more load-comments">Show more</div>
+                                                                                                </div>
+                                        </div>    
+                                    </div>
+                                </div>
+                                    
+                                <div class="col-md-4">
+                                    <div class="ads-placment"></div>
+                                    
+                                    <div class="read-article-sidebar">
+                                        <div class="ra-sidebar-head">
+                                            <h4>Categories</h4>
+                                        </div>
+                                        <div class="ra-sidebar-body"> 
+                                         <div class="article-categories no-padding-both">
+                                            <div class="pt_categories">
+                                                <ul>
+                                                                                                                        <li>
+                                                                <a href="https://clikview.com/articles/category/1" data-load="?link1=articles&amp;category_id=1"><span>Film &amp; Animation</span></a>
+                                                            </li>
+                                                                                                                                                        <li>
+                                                                <a href="https://clikview.com/articles/category/3" data-load="?link1=articles&amp;category_id=3"><span>Business</span></a>
+                                                            </li>
+                                                                                                                                                        <li>
+                                                                <a href="https://clikview.com/articles/category/4" data-load="?link1=articles&amp;category_id=4"><span>Pets &amp; Animals</span></a>
+                                                            </li>
+                                                                                                                                                        <li>
+                                                                <a href="https://clikview.com/articles/category/5" data-load="?link1=articles&amp;category_id=5"><span>Sports</span></a>
+                                                            </li>
+                                                                                                                                                        <li>
+                                                                <a href="https://clikview.com/articles/category/6" data-load="?link1=articles&amp;category_id=6"><span>Travel &amp; Events</span></a>
+                                                            </li>
+                                                                                                                                                        <li class="active">
+                                                                <a href="https://clikview.com/articles/category/7" data-load="?link1=articles&amp;category_id=7"><span>Motivation</span></a>
+                                                            </li>
+                                                                                                                                                        <li>
+                                                                <a href="https://clikview.com/articles/category/8" data-load="?link1=articles&amp;category_id=8"><span>People &amp; Blogs</span></a>
+                                                            </li>
+                                                                                                                                                        <li>
+                                                                <a href="https://clikview.com/articles/category/9" data-load="?link1=articles&amp;category_id=9"><span>Advanced Medicine</span></a>
+                                                            </li>
+                                                                                                                                                        <li>
+                                                                <a href="https://clikview.com/articles/category/10" data-load="?link1=articles&amp;category_id=10"><span>Digital Marketing</span></a>
+                                                            </li>
+                                                                                                                                                        <li>
+                                                                <a href="https://clikview.com/articles/category/11" data-load="?link1=articles&amp;category_id=11"><span>News &amp; Politics</span></a>
+                                                            </li>
+                                                                                                                                                        <li>
+                                                                <a href="https://clikview.com/articles/category/12" data-load="?link1=articles&amp;category_id=12"><span>How-to &amp; Style</span></a>
+                                                            </li>
+                                                                                                                                                        <li>
+                                                                <a href="https://clikview.com/articles/category/13" data-load="?link1=articles&amp;category_id=13"><span>Non-profits &amp; Activism</span></a>
+                                                            </li>
+                                                                                                                                                        <li>
+                                                                <a href="https://clikview.com/articles/category/849" data-load="?link1=articles&amp;category_id=849"><span>Super Cars</span></a>
+                                                            </li>
+                                                                                                                                                        <li>
+                                                                <a href="https://clikview.com/articles/category/18661" data-load="?link1=articles&amp;category_id=18661"><span>Comedy</span></a>
+                                                            </li>
+                                                                                                                                                        <li>
+                                                                <a href="https://clikview.com/articles/category/other" data-load="?link1=articles&amp;category_id=other"><span>Other</span></a>
+                                                            </li>
+                                                                                                            </ul>
+                                                <div class="clear"></div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div><br>
+                        
+                                    <div class="read-article-sidebar">
+                                        <div class="ra-sidebar-head">
+                                            <h4>Related Articles</h4>
+                                        </div>
+                                        <div class="ra-sidebar-body"> 
+                                         <div class="related-article-wrapper">
+                            <div class="ra-title">
+                                <h5><a href="https://clikview.com/articles/read/thriving-in-a-world-of-change_2.html" data-load="?link1=read&amp;id=thriving-in-a-world-of-change_2.html">Thriving in a world of change</a></h5>
+                                <p><a href="https://clikview.com/articles/category/7" data-load="?link1=articles&amp;category_id=7">Motivation</a>&nbsp;&nbsp;•&nbsp;&nbsp;496 Views</p>
+                            </div>
+                            <div class="ra-thumb" style="background-image: url('https://clikview.com/upload/photos/2022/08/vxXsJlEUNDATZIW5lYmo_18_9cf6e0613b8af4b35067a7468e099412_image.png');"></div>
+                        </div><div class="related-article-wrapper">
+                            <div class="ra-title">
+                                <h5><a href="https://clikview.com/articles/read/get-busy-living_5.html" data-load="?link1=read&amp;id=get-busy-living_5.html">Get Busy Living</a></h5>
+                                <p><a href="https://clikview.com/articles/category/7" data-load="?link1=articles&amp;category_id=7">Motivation</a>&nbsp;&nbsp;•&nbsp;&nbsp;459 Views</p>
+                            </div>
+                            <div class="ra-thumb" style="background-image: url('https://clikview.com/upload/photos/2022/08/ahR1hu8g97FQ7oBOy91o_22_884ea6fd4020bfe0875f879add442ced_image.jpg');"></div>
+                        </div><div class="related-article-wrapper">
+                            <div class="ra-title">
+                                <h5><a href="https://clikview.com/articles/read/business-3-0_7.html" data-load="?link1=read&amp;id=business-3-0_7.html">BUSINESS 3.0</a></h5>
+                                <p><a href="https://clikview.com/articles/category/7" data-load="?link1=articles&amp;category_id=7">Motivation</a>&nbsp;&nbsp;•&nbsp;&nbsp;427 Views</p>
+                            </div>
+                            <div class="ra-thumb" style="background-image: url('https://clikview.com/upload/photos/2022/08/mSJ6mi8dQRJfYTbefoYN_22_3e30b1dec41d458bfc6e7100746abed4_image.jpg');"></div>
+                        </div><div class="related-article-wrapper">
+                            <div class="ra-title">
+                                <h5><a href="https://clikview.com/articles/read/executive-order-biden-unleashes-transhuman-genetic-modification-firestorm-on-america_44.html" data-load="?link1=read&amp;id=executive-order-biden-unleashes-transhuman-genetic-modification-firestorm-on-america_44.html">Executive Order: Biden Unleashes Transhuman, Genetic Modification Firestorm On America</a></h5>
+                                <p><a href="https://clikview.com/articles/category/7" data-load="?link1=articles&amp;category_id=7">Motivation</a>&nbsp;&nbsp;•&nbsp;&nbsp;402 Views</p>
+                            </div>
+                            <div class="ra-thumb" style="background-image: url('https://clikview.com/upload/photos/2022/09/DnrOeCt8fKdE1Q14bDLu_13_66d2b83c34208eae1502397dd76082a1_image.jpg');"></div>
+                        </div><div class="related-article-wrapper">
+                            <div class="ra-title">
+                                <h5><a href="https://clikview.com/articles/read/the-real-dr-fauci-the-movie_104.html" data-load="?link1=read&amp;id=the-real-dr-fauci-the-movie_104.html">The Real Dr.  Fauci - The Movie</a></h5>
+                                <p><a href="https://clikview.com/articles/category/7" data-load="?link1=articles&amp;category_id=7">Motivation</a>&nbsp;&nbsp;•&nbsp;&nbsp;382 Views</p>
+                            </div>
+                            <div class="ra-thumb" style="background-image: url('https://clikview.com/upload/photos/2022/10/FWZN5FKMP7mSrtmlZoQQ_16_fdea892b50e1e93450c117ed6cde81c0_image.png');"></div>
+                        </div><div class="related-article-wrapper">
+                            <div class="ra-title">
+                                <h5><a href="https://clikview.com/articles/read/ccp-opens-police-department-in-the-us-free-viewing-to-the-epoch-times-documentary-see-below_101.html" data-load="?link1=read&amp;id=ccp-opens-police-department-in-the-us-free-viewing-to-the-epoch-times-documentary-see-below_101.html">CCP Opens Police Department in the US: Free Viewing to the Epoch Times Documentary  (see below)</a></h5>
+                                <p><a href="https://clikview.com/articles/category/7" data-load="?link1=articles&amp;category_id=7">Motivation</a>&nbsp;&nbsp;•&nbsp;&nbsp;363 Views</p>
+                            </div>
+                            <div class="ra-thumb" style="background-image: url('https://clikview.com/upload/photos/2022/10/RnYEslJNFRWdt1bKqdlC_13_d7ee7b8f55544fa5779f7f507cb35076_image.png');"></div>
+                        </div><div class="related-article-wrapper">
+                            <div class="ra-title">
+                                <h5><a href="https://clikview.com/articles/read/what-s-the-next-disaster-to-confinement-in-isolation-in-this-state-critical-thinking-news-criticalth_48.html" data-load="?link1=read&amp;id=what-s-the-next-disaster-to-confinement-in-isolation-in-this-state-critical-thinking-news-criticalth_48.html">What’s the Next Disaster to Confinement in isolation in this State? - Critical Thinking News. @CriticalThinkingNews</a></h5>
+                                <p><a href="https://clikview.com/articles/category/7" data-load="?link1=articles&amp;category_id=7">Motivation</a>&nbsp;&nbsp;•&nbsp;&nbsp;326 Views</p>
+                            </div>
+                            <div class="ra-thumb" style="background-image: url('https://clikview.com/upload/photos/2022/09/n5M24CHjdnspdgtJIFsB_19_82f312d17cc8dcd2ad78647ea2ecf640_image.png');"></div>
+                        </div>
+                                        </div>
+                                    </div><br>
+                                    
+                                    <div class="read-article-sidebar">
+                                        <div class="ra-sidebar-head">
+                                            <h4>Related Videos</h4>
+                                        </div>
+                                        <div class="ra-sidebar-body"> 
+                                         <div class="related-video-wrapper">
+                            <div class="ra-thumb">
+                                <a href="https://clikview.com/watch/7OGf2OJ7dh3f9bi" data-load="?link1=watch&amp;id=the-big-reset-movie-english-version_7OGf2OJ7dh3f9bi.html">
+                                    <img src="https://clikview.com/upload/photos/2022/09/gVYHr8jKEB3wUxGfGDIY_29_3e9afdb8a7063757183ef4b76cfa5501_image.png" alt="⁣The Big Reset Movie - ENGLISH Version">
+                                    <div class="video-duration">2:16:44</div>
+                                </a>
+                            </div>
+                            <div class="ra-title">
+                                <div class="video-title"><a href="https://clikview.com/watch/7OGf2OJ7dh3f9bi" data-load="?link1=watch&amp;id=the-big-reset-movie-english-version_7OGf2OJ7dh3f9bi.html"> ⁣The Big Reset Movie - ENGLISH Version</a></div>
+                                <div class="video-publisher">TheBigResetMovie</div>
+                                <div class="video-publisher">51,764 Views <span class="middot">·</span> 1 month ago</div>
+                                <div class="video-category"><a href="https://clikview.com/videos/category/1" data-load="?link1=videos&amp;page=category&amp;id=1">Film &amp; Animation</a></div>
+                            </div>
+                        </div><div class="related-video-wrapper">
+                            <div class="ra-thumb">
+                                <a href="https://clikview.com/watch/dQUpgHnJmFoGy3S" data-load="?link1=watch&amp;id=covid-facts-vaccine-induced-injury-heart-dz-hospitalization-dr-rashid-a-buttar_dQUpgHnJmFoGy3S.html">
+                                    <img src="https://clikview.com/upload/photos/2022/08/Pq42rkjnI5T8fi3NM2l4_18_80d11306f07d1d0e4ea4fbc792720f60_image.jpg" alt="⁣Covid Facts: Vaccine Induced Injury = Heart Dz / Hospitalization - Dr Rashid A Buttar">
+                                    <div class="video-duration">8:32</div>
+                                </a>
+                            </div>
+                            <div class="ra-title">
+                                <div class="video-title"><a href="https://clikview.com/watch/dQUpgHnJmFoGy3S" data-load="?link1=watch&amp;id=covid-facts-vaccine-induced-injury-heart-dz-hospitalization-dr-rashid-a-buttar_dQUpgHnJmFoGy3S.html"> ⁣Covid Facts: Vaccine Induced Injury = Heart Dz / Hospitalization - Dr Rashid A Buttar</a></div>
+                                <div class="video-publisher">Dr Rashid A Buttar</div>
+                                <div class="video-publisher">21,843 Views <span class="middot">·</span> 3 months ago</div>
+                                <div class="video-category"><a href="https://clikview.com/videos/category/9" data-load="?link1=videos&amp;page=category&amp;id=9">Advanced Medicine</a></div>
+                            </div>
+                        </div><div class="related-video-wrapper">
+                            <div class="ra-thumb">
+                                <a href="https://clikview.com/watch/EIeqHyYMmhSRRZP" data-load="?link1=watch&amp;id=the-big-reset-movie-german-version_EIeqHyYMmhSRRZP.html">
+                                    <img src="https://clikview.com/upload/photos/2022/10/1kBmN3F5uKOk5vYaPw5I_18_5d933fe3eac2f1ac837a09af08d547af_image.png" alt="⁣The Big Reset Movie - GERMAN version">
+                                    <div class="video-duration">2:16:44</div>
+                                </a>
+                            </div>
+                            <div class="ra-title">
+                                <div class="video-title"><a href="https://clikview.com/watch/EIeqHyYMmhSRRZP" data-load="?link1=watch&amp;id=the-big-reset-movie-german-version_EIeqHyYMmhSRRZP.html"> ⁣The Big Reset Movie - GERMAN version</a></div>
+                                <div class="video-publisher">TheBigResetMovie</div>
+                                <div class="video-publisher">21,304 Views <span class="middot">·</span> 21 days ago</div>
+                                <div class="video-category"><a href="https://clikview.com/videos/category/1" data-load="?link1=videos&amp;page=category&amp;id=1">Film &amp; Animation</a></div>
+                            </div>
+                        </div><div class="related-video-wrapper">
+                            <div class="ra-thumb">
+                                <a href="https://clikview.com/watch/vI7Sh2TN1MF2XVG" data-load="?link1=watch&amp;id=the-real-covid-19-problem-and-the-only-solution-dr-rashid-a-buttar_vI7Sh2TN1MF2XVG.html">
+                                    <img src="https://clikview.com/upload/photos/2022/09/a9928c5e11161d2e8109ecf38950e7820b7b108aem8biDf9HmOqDidZMnaU.video_thumb_8144_11.jpeg" alt="⁣The Real Covid 19 Problem and the ONLY Solution - Dr Rashid A Buttar">
+                                    <div class="video-duration">1:43:22</div>
+                                </a>
+                            </div>
+                            <div class="ra-title">
+                                <div class="video-title"><a href="https://clikview.com/watch/vI7Sh2TN1MF2XVG" data-load="?link1=watch&amp;id=the-real-covid-19-problem-and-the-only-solution-dr-rashid-a-buttar_vI7Sh2TN1MF2XVG.html"> ⁣The Real Covid 19 Problem and the ONLY Solution - Dr Rashid A Buttar</a></div>
+                                <div class="video-publisher">Dr Rashid A Buttar</div>
+                                <div class="video-publisher">13,366 Views <span class="middot">·</span> 2 months ago</div>
+                                <div class="video-category"><a href="https://clikview.com/videos/category/9" data-load="?link1=videos&amp;page=category&amp;id=9">Advanced Medicine</a></div>
+                            </div>
+                        </div><div class="related-video-wrapper">
+                            <div class="ra-thumb">
+                                <a href="https://clikview.com/watch/vpr9femmsKcQw7Y" data-load="?link1=watch&amp;id=vaxxer-vs-truther-rap-battle_vpr9femmsKcQw7Y.html">
+                                    <img src="https://clikview.com/upload/photos/2022/08/aa9afdc91ff2d1d09edd684018a1b71dfa74a555rdOcB8fejX8tkH6wWBTA.video_thumb_7894_163.8.jpeg" alt="⁣Vaxxer vs Truther Rap Battle">
+                                    <div class="video-duration">4:13</div>
+                                </a>
+                            </div>
+                            <div class="ra-title">
+                                <div class="video-title"><a href="https://clikview.com/watch/vpr9femmsKcQw7Y" data-load="?link1=watch&amp;id=vaxxer-vs-truther-rap-battle_vpr9femmsKcQw7Y.html"> ⁣Vaxxer vs Truther Rap Battle</a></div>
+                                <div class="video-publisher">Tiffany Shutes</div>
+                                <div class="video-publisher">4,618 Views <span class="middot">·</span> 3 months ago</div>
+                                <div class="video-category"><a href="https://clikview.com/videos/category/9" data-load="?link1=videos&amp;page=category&amp;id=9">Advanced Medicine</a></div>
+                            </div>
+                        </div><div class="related-video-wrapper">
+                            <div class="ra-thumb">
+                                <a href="https://clikview.com/watch/CmRf8qDp2BdHrdk" data-load="?link1=watch&amp;id=clay-clark-accuses-dr-buttar-of-being-a-racist-hilarious-review-of-current-events_CmRf8qDp2BdHrdk.html">
+                                    <img src="https://clikview.com/upload/photos/2022/08/815c4f15fd9fe37a7155f8b2670f1a0d2c998e8dntUxxaVD3MsbjyhoANjt.video_thumb_2809_25.jpeg" alt="⁣Clay Clark Accuses Dr Buttar of Being A Racist - Hilarious Review of Current Events">
+                                    <div class="video-duration">46:14</div>
+                                </a>
+                            </div>
+                            <div class="ra-title">
+                                <div class="video-title"><a href="https://clikview.com/watch/CmRf8qDp2BdHrdk" data-load="?link1=watch&amp;id=clay-clark-accuses-dr-buttar-of-being-a-racist-hilarious-review-of-current-events_CmRf8qDp2BdHrdk.html"> ⁣Clay Clark Accuses Dr Buttar of Being A Racist - Hilarious Review of Current Events</a></div>
+                                <div class="video-publisher">Dr Rashid A Buttar</div>
+                                <div class="video-publisher">3,558 Views <span class="middot">·</span> 2 months ago</div>
+                                <div class="video-category"><a href="https://clikview.com/videos/category/11" data-load="?link1=videos&amp;page=category&amp;id=11">News &amp; Politics</a></div>
+                            </div>
+                        </div><div class="related-video-wrapper">
+                            <div class="ra-thumb">
+                                <a href="https://clikview.com/watch/1yC3hlyri9nA4uW" data-load="?link1=watch&amp;id=the-power-of-collective-focused-intentional-meditation-in-silence-dr-rashid-a-buttar_1yC3hlyri9nA4uW.html">
+                                    <img src="https://clikview.com/upload/photos/2022/09/H38qQpsN1UWnHQUgOQIz_21_6483b0a94dd393c9867249894a51070c_image.png" alt="⁣The Power of Collective, Focused, Intentional Meditation In Silence - Dr Rashid A Buttar">
+                                    <div class="video-duration">40:24</div>
+                                </a>
+                            </div>
+                            <div class="ra-title">
+                                <div class="video-title"><a href="https://clikview.com/watch/1yC3hlyri9nA4uW" data-load="?link1=watch&amp;id=the-power-of-collective-focused-intentional-meditation-in-silence-dr-rashid-a-buttar_1yC3hlyri9nA4uW.html"> ⁣The Power of Collective, Focused, Intentional Meditation In Silence - Dr Rashid A Buttar</a></div>
+                                <div class="video-publisher">Dr Rashid A Buttar</div>
+                                <div class="video-publisher">2,526 Views <span class="middot">·</span> 2 months ago</div>
+                                <div class="video-category"><a href="https://clikview.com/videos/category/9" data-load="?link1=videos&amp;page=category&amp;id=9">Advanced Medicine</a></div>
+                            </div>
+                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="jquery.min.js"></script>
+    <script src="popper.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
